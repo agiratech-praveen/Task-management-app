@@ -1,0 +1,26 @@
+<%- include("./sections/header") %>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Task-Manager</a>
+    </div>
+</nav>
+<div class="container mt-5">
+    <form action="/save/task/<%= task._id %>" method="POST">
+      <div class="row">
+        <div class="col">
+          <input type="text" name="task" class="form-control" value="<%= task.task %>">
+        </div>
+        <div class="col-auto">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="completed" <% if (task.completed) { %> checked <% } %> id="completedCheckbox">
+            <label class="form-check-label" for="completedCheckbox">Mark as completed</label>
+          </div>
+        </div>
+        <div class="col-auto">
+          <input type="submit" value="Save Task" class="btn btn-md btn-success">
+        </div>
+      </div>
+    </form>
+  </div>
+  
+<%- include("./sections/header") %>
